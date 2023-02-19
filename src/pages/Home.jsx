@@ -73,23 +73,25 @@ function Home() {
             Buscar
           </Button>
         </Form>
-        {!isSearch && (
-          <div id="empty-space">
-            <img src={eImg} alt="Empty Image" />
-          </div>
-        )}
 
         {isLoading && (
           <div id="empty-space">
             <h3 className="load">Carregando...</h3>
           </div>
         )}
+
+        {!isSearch && (
+          <div id="empty-space">
+            <img src={eImg} alt="Empty Image" />
+          </div>
+        )}
+          
       </Container>
       <Container className="card-container">
         <Row xs={1} md={4} className="g-4">
           {result.map((book) => (
             <Col key={book.id}>
-              <Card className="card-book text-center">
+              <Card className="card-book" id="card-content">
                 <CardImg
                   id="card-img"
                   variant="top"
@@ -106,15 +108,15 @@ function Home() {
                       Autor(a):{" "}
                       {book.volumeInfo.authors
                         ? book.volumeInfo.authors[0]
-                        : ""}
+                        : "" || "Desconhecido"}
                     </h6>
-                    <p className="card-text">
-                      Ano: {book.volumeInfo.publishedDate}
-                    </p>
+                    <h6 className="card-text">
+                      Ano: {book.volumeInfo.publishedDate ? book.volumeInfo.publishedDate : "Desconhecido" }
+                    </h6>
                   </div>
                 </Card.Body>
                 <Card.Footer>
-                  <div style={{ margin: "auto" }}>
+                  <div style={{ margin: "0 0 1em 0" }}>
                     <Button
                       id="btn-info"
                       variant="info"
