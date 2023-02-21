@@ -113,10 +113,13 @@ function Home() {
                     <h6 className="card-text">
                       Ano: {book.volumeInfo.publishedDate ? book.volumeInfo.publishedDate : "Desconhecido" }
                     </h6>
+                    <h6 className="card-text">
+                      <span className="amount">R${book.saleInfo.listPrice != undefined ? book.saleInfo.listPrice.amount : " Grátis"} </span>
+                    </h6>
                   </div>
                 </Card.Body>
                 <Card.Footer>
-                  <div style={{ margin: "0 0 1em 0" }}>
+                  <div style={{ margin: "3.5em 0 1em 0" }}>
                     <Button
                       id="btn-info"
                       variant="info"

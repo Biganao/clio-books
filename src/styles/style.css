@@ -426,14 +426,23 @@ h6.card-text {
   font-size: 16px;
 }
 
+.amount {
+  color:#741222;
+  font-weight: 700;
+  font-size: 22px;
+
+  position: relative;
+  top: .5em;
+}
+
 img.card-img-top {
   height: 300px;
   width: 252px;
 }
 
 div.card-body {
-  margin: 2em 0;
-  height: 8rem;
+  margin: 2em 0 .5em 0;
+  height: 12rem;
 }
 
 .container {
